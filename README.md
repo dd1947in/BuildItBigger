@@ -1,11 +1,12 @@
 ## Udacity Android Developer Nano Degree Project : Build It Bigger
 
-### This is a Gradle project consisting of the followign modules
+### This is a Gradle project consisting of the followign modules :
  
 * -app : Main Android App
 * -jokeactivity : An Android Library to display Jokes in an activity
 * -backend : Google Cloud Endpoints module. This modules should be run on the local system for the evaluation.
 * -libjavajokes : A Java project that provides jokes to GCE module
+ 
  
 ###This project includes :
  
