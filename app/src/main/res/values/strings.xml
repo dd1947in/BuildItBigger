@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Build it Bigger</string>
+    <string name="instructions">Press the button for a delicious joke!</string>
+    <string name="button_text">Tell Joke</string>
+    <string name="action_settings">Settings</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="app_shared_preferences_file">BuildItBigger_SharedPreferences</string>
+    <string name="application_id_key">APPLICATION_ID</string>
+    <string name="application_id_paid">com.udacity.gradle.builditbigger.paid</string>
+    <string name="application_id_free">com.udacity.gradle.builditbigger.free</string>
+    <string name="message_app_free">-Want a premium experience from this app?\n-Switch to our paid app and enjoy premium jokes penned by Masters!!!\n-It is not a laughing matter but for $5, you could enjoy an entire year of laughs.</string>
+    <string name="message_app_paid">-You are now enjoying premium experience.\n-If you like this app, consider giving the app to your family and friends.\n-They will have a year  full of laughs for just $5 and thank you for the gift.</string>
+
+</resources>

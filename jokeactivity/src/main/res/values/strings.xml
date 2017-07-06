@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">JokeActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_shared_preferences_file">BuildItBigger_SharedPreferences</string>
+    <string name="application_id_key">APPLICATION_ID</string>
+    <string name="application_id_paid">com.udacity.gradle.builditbigger.paid</string>
+    <string name="application_id_free">com.udacity.gradle.builditbigger.free</string>
+    <string name="banner_ad_unit_id_al">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="message_app_free">-Want a premium experience from this app?\n-Switch to our paid app and enjoy premiums jokes penned by Masters!!!\n-It is not a laughing matter but for $5, you could enjoy an entire year of laughs.</string>
+    <string name="message_app_paid">-You are now enjoying premium experience.\n-If you like this app, consider giving the app to your family and friends.\n-They will have a year of full of laughs.</string>
+</resources>

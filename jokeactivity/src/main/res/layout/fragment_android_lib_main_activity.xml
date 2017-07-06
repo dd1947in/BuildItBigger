@@ -1,0 +1,74 @@
+<!--
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.udacity.gradle.jokeactivity.AndroidLibMainActivityFragment">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+</FrameLayout>
+
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:ads="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fm_joke_fragment"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="10dp"
+android:paddingLeft="10dp"
+android:paddingRight="10dp"
+android:paddingTop="10dp"
+tools:context=".AndroidLibMainActivityFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/instructions_text_view_al"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:text="Android Lib Activity Fragment" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+<TextView
+    android:id="@+id/tv_joke_text_view_al"
+    android:layout_width="wrap_content"
+    android:layout_height="100dp"
+    android:text="" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+    <TextView
+        android:id="@+id/tv_message_al"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:text="" />
+
+</LinearLayout>
+<com.google.android.gms.ads.AdView
+    android:id="@+id/adViewAL"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    ads:adSize="BANNER"
+    ads:adUnitId="@string/banner_ad_unit_id_al"></com.google.android.gms.ads.AdView>
+
+</RelativeLayout>
