@@ -8,7 +8,7 @@
 * -libjavajokes : A Java project that provides jokes to GCE module
  
  
-###This project includes :
+### This project includes :
  
  * -debug and release builds with signing config
  * -paid and free product flavors
