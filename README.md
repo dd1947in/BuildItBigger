@@ -13,7 +13,7 @@
  * -debug and release builds with signing config
  * -paid and free product flavors
  * -A connected Espresso test suite to assert jokes are being loaded.
- * -The java library only generates a random number in range 0 - 49 and picks a predefined text(not a real joke).
+ * -The java library only generates a random number in range 0 - 49 and picks a predefined text(not real jokes).
  
  
  
