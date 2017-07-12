@@ -15,7 +15,7 @@
 
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fm_joke_fragment"
 android:layout_width="match_parent"
@@ -62,6 +62,8 @@ tools:context=".AndroidLibMainActivityFragment">
         android:text="" />
 
 </LinearLayout>
+<!-- Per revision 1, no play services library in jokeactivity. and hence no ads in this activity -->
+<!--
 <com.google.android.gms.ads.AdView
     android:id="@+id/adViewAL"
     android:layout_width="wrap_content"
@@ -70,5 +72,6 @@ tools:context=".AndroidLibMainActivityFragment">
     android:layout_centerHorizontal="true"
     ads:adSize="BANNER"
     ads:adUnitId="@string/banner_ad_unit_id_al"></com.google.android.gms.ads.AdView>
+    -->
 
 </RelativeLayout>

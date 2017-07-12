@@ -113,11 +113,13 @@ public class JokesProvider {
     };
 
     public Joke getARandomJoke(int flavor) {
-        int jokeId = (int) (Math.random() * 50);
+        int jokeId =  0 ; // (int) (Math.random() * 50);   // Review 1  fix
         Joke joke = new Joke();
         if(flavor == JOKE_FLAVOR_PAID) {
+            jokeId = (int) (Math.random() * paidJokesCollection.length);
             joke.setJoke(paidJokesCollection[jokeId]);
         } else {
+            jokeId = (int) (Math.random() * freeJokesCollection.length);
             joke.setJoke(freeJokesCollection[jokeId]);
         }
         return joke;

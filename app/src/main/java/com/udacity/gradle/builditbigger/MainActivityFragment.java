@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+//import com.google.android.gms.ads.AdRequest;
+//import com.google.android.gms.ads.AdView;
 
 
 /**
@@ -26,7 +26,7 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
-        AdView mAdView = (AdView) root.findViewById(R.id.adView);
+        //AdView mAdView = (AdView) root.findViewById(R.id.adView);
         TextView tvMessage = (TextView) root.findViewById(R.id.tv_message);
         Context context = getContext();
         SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(com.udacity.gradle.jokeactivity.R.string.app_shared_preferences_file), Context.MODE_PRIVATE);
@@ -36,14 +36,14 @@ public class MainActivityFragment extends Fragment {
         // get test ads on a physical device. e.g.
         // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
         if(applicationId.equals(getString(com.udacity.gradle.jokeactivity.R.string.application_id_paid))) {
-            mAdView.setVisibility(View.INVISIBLE);
+            //mAdView.setVisibility(View.INVISIBLE);
             tvMessage.setText(getString(R.string.message_app_paid));
         } else {
             tvMessage.setText(getString(R.string.message_app_free));
-            AdRequest adRequest = new AdRequest.Builder()
+            /*AdRequest adRequest = new AdRequest.Builder()
                     .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                     .build();
-            mAdView.loadAd(adRequest);
+            mAdView.loadAd(adRequest);*/
         }
         return root;
     }

@@ -10,5 +10,6 @@
     <string name="application_id_free">com.udacity.gradle.builditbigger.free</string>
     <string name="message_app_free">-Want a premium experience from this app?\n-Switch to our paid app and enjoy premium jokes penned by Masters!!!\n-It is not a laughing matter but for $5, you could enjoy an entire year of laughs.</string>
     <string name="message_app_paid">-You are now enjoying premium experience.\n-If you like this app, consider giving the app to your family and friends.\n-They will have a year  full of laughs for just $5 and thank you for the gift.</string>
+    <string name="joke_error_message">It is not a joke but  there was an error in getting joke!!! </string>
 
 </resources>

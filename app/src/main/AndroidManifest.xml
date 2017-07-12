@@ -14,9 +14,12 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <!--This meta-data tag is required to use Google Play Services.-->
+        <!-- This meta tag is not needed for paid app -->
+        <!-- Moved to Free App
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+            -->
         <!-- Parent Activity / App Launcher is from main app -->
         <activity
             android:name="com.udacity.gradle.builditbigger.MainActivity"
@@ -40,10 +43,12 @@
         </activity>
 
         <!--Include the AdActivity configChanges and theme. -->
+        <!--  Moved to Free App
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
+            -->
     </application>
 
 </manifest>

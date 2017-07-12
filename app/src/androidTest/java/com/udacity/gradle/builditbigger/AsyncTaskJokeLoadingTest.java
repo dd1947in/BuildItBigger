@@ -7,6 +7,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.concurrent.ExecutionException;
+
+import static android.support.test.InstrumentationRegistry.getContext;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -24,11 +27,13 @@ import static org.hamcrest.Matchers.not;
  *
  */
 @RunWith(AndroidJUnit4.class)
-public class AsyncTaskJokeLoadingTest {
+public   class AsyncTaskJokeLoadingTest {
 
     @Rule
     public ActivityTestRule<MainActivity> mainActivityActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
-
+/*
+  Test Joke Async Task using Espresso
+ */
     @Test
     public void getAJokeAndTestViewInJokeActivity() {
 
@@ -44,5 +49,31 @@ public class AsyncTaskJokeLoadingTest {
         //Assert that Joke Text is not equal ""
         onView(withId(R.id.tv_joke_text_view_al)).check(matches(not(withText(""))));
 
+    }
+    /*
+      Test Joke Async Task by itself
+     */
+    @Test
+    public   void getAJokeAndTestJoke() {
+        String AppVariantFree = "1";
+        String AppVariantPaid = "2";
+        String jokeFree = null;
+        String jokePaid = null;
+
+        try {
+            jokeFree = new JokeAsyncTask().execute( AppVariantFree).get();
+            jokePaid = new JokeAsyncTask().execute( AppVariantPaid).get();
+        }catch(ExecutionException ee) {
+            jokeFree = null;
+            jokePaid = null;
+            //ee.printStackTrace();
+        }catch (InterruptedException ie) {
+            jokeFree = null;
+            jokePaid = null;
+            //ie.printStackTrace();
+        }
+
+        assert(jokeFree != null && !jokeFree.equals(""));
+        assert(jokePaid != null && !jokePaid.equals(""));
     }
 }
