@@ -6,6 +6,7 @@ package com.udacity.gradle.builditbigger;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -15,7 +16,10 @@ import com.udacity.gradle.builditbigger.backend.jokeApi.JokeApi;
 import java.io.IOException;
 public class JokeAsyncTask  extends AsyncTask <String, Void, String> {
     private  JokeApi myApiService = null;
-
+    private PostJokeAsyncTaskListener<String> postJokeAsyncTaskListener;
+     JokeAsyncTask(PostJokeAsyncTaskListener<String> postJokeAsyncTaskListener) {
+            this.postJokeAsyncTaskListener = postJokeAsyncTaskListener;
+     }
     @Override
     protected String doInBackground(String... params) {
         if(myApiService == null) {  // Only do this once
@@ -44,6 +48,16 @@ public class JokeAsyncTask  extends AsyncTask <String, Void, String> {
             return joke;
         } catch (IOException e) {
             return e.getMessage();
+        }
+
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
+        if(postJokeAsyncTaskListener != null) {
+            Log.d("onPostExecute", s);
+            postJokeAsyncTaskListener.onPostJokeAsyncTask(s);  // Return joke
         }
 
     }

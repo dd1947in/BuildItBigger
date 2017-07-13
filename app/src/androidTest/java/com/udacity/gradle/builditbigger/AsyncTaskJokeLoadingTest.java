@@ -2,6 +2,7 @@ package com.udacity.gradle.builditbigger;
 
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,6 +17,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.Matchers.not;
 
 /**
@@ -57,12 +59,17 @@ public   class AsyncTaskJokeLoadingTest {
     public   void getAJokeAndTestJoke() {
         String AppVariantFree = "1";
         String AppVariantPaid = "2";
-        String jokeFree = null;
+        String  jokeFree = null;
         String jokePaid = null;
 
+//        //Async Task Listener
+        PostJokeAsyncTaskListener<String> asyncTaskListener = null ; //   asyncTaskListener is not needed for this test
         try {
-            jokeFree = new JokeAsyncTask().execute( AppVariantFree).get();
-            jokePaid = new JokeAsyncTask().execute( AppVariantPaid).get();
+            //jokeFree = new JokeAsyncTask().execute( AppVariantFree).get();
+            //jokePaid = new JokeAsyncTask().execute( AppVariantPaid).get();
+            jokeFree = new JokeAsyncTask(asyncTaskListener).execute( AppVariantFree).get();
+            jokePaid = new JokeAsyncTask(asyncTaskListener).execute( AppVariantPaid).get();
+
         }catch(ExecutionException ee) {
             jokeFree = null;
             jokePaid = null;
@@ -73,7 +80,8 @@ public   class AsyncTaskJokeLoadingTest {
             //ie.printStackTrace();
         }
 
-        assert(jokeFree != null && !jokeFree.equals(""));
-        assert(jokePaid != null && !jokePaid.equals(""));
+        // assertTrue is added due to Rev 2 .
+        assertTrue(jokeFree != null && !jokeFree.equals(""));
+        assertTrue(jokePaid != null && !jokePaid.equals(""));
     }
 }

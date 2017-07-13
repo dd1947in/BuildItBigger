@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -65,20 +66,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-            try {
-
-               mJoke = new JokeAsyncTask().execute( AppVariant).get();
-           }catch(ExecutionException ee) {
-               mJoke = getString(R.string.joke_error_message);
-
-           }catch (InterruptedException ie) {
-               mJoke = getString(R.string.joke_error_message);
-
-           }
-        startJokeActivity();
+        //Create the listener to start the joke activity
+        PostJokeAsyncTaskListener<String> asyncTaskListener = new PostJokeAsyncTaskListener<String>() {
+            @Override
+            public void onPostJokeAsyncTask(String result) {
+                Log.d("onPostJokeAsyncTask", result);
+                mJoke = result;
+                startJokeActivity();
+            }
+        };
+        new JokeAsyncTask(asyncTaskListener).execute( AppVariant);
     }
     public void startJokeActivity() {
         Intent intent = new Intent(mContext, AndroidLibMainActivity.class);
+        Log.d("onPostJokeAsyncTask", mJoke);
         intent.putExtra("JOKE", mJoke);
         intent.putExtra("APP_VARIANT", AppVariant);
         startActivity(intent);
